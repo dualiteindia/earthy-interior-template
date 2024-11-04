@@ -53,6 +53,3 @@ jobs:
             fi
           done
 
-      - name: Push changes
-        run: |
-          git push --all
