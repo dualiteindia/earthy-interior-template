@@ -1,4 +1,4 @@
-name: Validate and Cherry-Pick
+name: Prefix-Based Branch Creation
 
 on:
   push:
@@ -6,44 +6,53 @@ on:
       - main
 
 jobs:
-  validate-and-cherry-pick:
+  cherry-pick-and-branch:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # Fetch all history for all branches
 
-      - name: Validate Commit Message
-        id: validate_commit
+      - name: Set up Git user
         run: |
-          set -e  # Stop execution on error
-          COMMIT_MSG=$(git log -1 --pretty=%B)
-          echo "Commit message: $COMMIT_MSG"
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
 
-          # Define the keywords
-          KEYWORDS=("fixed:" "polished:" "ready:" "misc:" "generated:")
-
-          # Check if the commit message starts with any of the keywords
-          if [[ ! " ${KEYWORDS[@]} " =~ " ${COMMIT_MSG:0:${#KEYWORDS[0]}} " ]] &&
-             [[ ! " ${KEYWORDS[@]} " =~ " ${COMMIT_MSG:0:${#KEYWORDS[1]}} " ]] &&
-             [[ ! " ${KEYWORDS[@]} " =~ " ${COMMIT_MSG:0:${#KEYWORDS[2]}} " ]] &&
-             [[ ! " ${KEYWORDS[@]} " =~ " ${COMMIT_MSG:0:${#KEYWORDS[3]}} " ]] &&
-             [[ ! " ${KEYWORDS[@]} " =~ " ${COMMIT_MSG:0:${#KEYWORDS[4]}} " ]]; then
-            echo "Error: Commit message should start with 'fixed:', 'polished:', 'ready:', 'misc:', or 'generated:'."
-            exit 1
-          fi
-
-      - name: Get Commit Hash
-        id: commit_hash
+      - name: Fetch all branches
         run: |
-          set -e  # Stop execution on error
-          echo "commit_hash=$(git rev-parse HEAD)" >> $GITHUB_ENV
+          git fetch --all
 
-      - name: Setup Git Remote with PAT
+      - name: Filter and Cherry-Pick Commits
+        env:
+          REPO_URL: "https://github.com/mukuldualite/Amartesh.git"
+          TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          set -e  # Stop execution on error
-          # Use the GitHub PAT to set the remote URL
-          git remote set-url origin https://${{ secrets.GI_TOKEN }}:x-oauth-basic@github.com/mukuldualite/amartesh.git
-          echo "Git remote URL set with PAT."
+          # Define prefixes and corresponding branch names
+          prefixes=("fixed" "polished" "ready" "misc" "generated")
+          for prefix in "${prefixes[@]}"; do
+            # Find commits with the prefix
+            commits=$(git log --format='%H %s' main | grep -E "^$prefix:" | awk '{print $1}')
+            if [[ -n "$commits" ]]; then
+              branch="${prefix}-branch"
+              
+              # Check if the branch exists, if not, create it from main
+              if ! git show-ref --quiet refs/heads/"$branch"; then
+                git checkout -b "$branch" origin/main
+              else
+                git checkout "$branch"
+                git merge origin/main
+              fi
+              
+              # Cherry-pick commits
+              for commit in $commits; do
+                git cherry-pick "$commit" || (echo "Cherry-pick failed for commit $commit" && git cherry-pick --abort && exit 1)
+              done
+              
+              # Push to the branch on GitHub using the PAT
+              git push "https://${TOKEN}@${REPO_URL#https://}" "$branch"
+            fi
+          done
+
+      - name: Push changes
+        run: |
+          git push --all
