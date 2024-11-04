@@ -45,7 +45,7 @@ jobs:
         run: |
           set -e  # Stop execution on error
           # Use the GitHub PAT to set the remote URL
-          git remote set-url origin https://${{ secrets.GI_TOKEN }}:x-oauth-basic@github.com/Mukul1312/codewave-demo.git
+          git remote set-url origin https://${{ secrets.GI_TOKEN }}:x-oauth-basic@github.com/mukuldualite/amartesh.git
           echo "Git remote URL set with PAT."
 
       - name: Cherry-pick to Fixes and Features Branches
