@@ -57,5 +57,5 @@ jobs:
           REPO_URL: "https://github.com/prashantSj789/Testing_regukation.git"
           TOKEN: ${{ secrets.GI_TOKEN }}
         run: |
-             git remote set-url origin https://mukuldualite:${PAT_TOKEN}@github.com/prashantSj789/Testing_regukation.git
+             git remote set-url origin https://prashantSj789:${PAT_TOKEN}@github.com/prashantSj789/Testing_regukation.git
              git push origin --all
