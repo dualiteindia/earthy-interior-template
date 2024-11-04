@@ -22,7 +22,7 @@ jobs:
         run: |
           git fetch --all
 
-      - name: Filter and Cherry-Pick Commits
+      - name: Filter Cherry-Pick Commits
         env:
           REPO_URL: "https://github.com/prashantSj789/Testing_regukation.git"
           TOKEN: ${{ secrets.GI_TOKEN }}
