@@ -55,6 +55,6 @@ jobs:
       - name: Push changes
         env:
           REPO_URL: "https://github.com/mukuldualite/Amartesh.git"
-          TOKEN: ${{ secrets.PAT_TOKEN }}
+          TOKEN: ${{ secrets.GI_TOKEN }}
         run: |
             git push "https://${TOKEN}@${REPO_URL#https://}" --all
