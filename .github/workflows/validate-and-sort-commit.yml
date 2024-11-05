@@ -51,13 +51,14 @@ jobs:
           git remote set-url origin https://${{ secrets.GI_TOKEN }}:x-oauth-basic@github.com/mukuldualite/Amartesh.git
           echo "Git remote URL set with PAT."
 
-      - name: Cherry-pick to  Branches
+      - name: Cherry-pick to Branches
         run: |
+          set -e  # Stop execution on error
           # Define prefixes and corresponding branch names
           prefixes=("fixed" "polished" "ready" "misc" "generated")
           for prefix in "${prefixes[@]}"; do
             # Find commits with the prefix
-            commits=$(git log --format='%H %s' main | grep -E "^$prefix:" | awk '{print $1}')
+            commits=$(git log --format='%H %s' main | grep -E "^${prefix}:" | awk '{print $1}')
             if [[ -n "$commits" ]]; then
               branch="${prefix}-branch"
               
@@ -71,13 +72,15 @@ jobs:
               
               # Cherry-pick commits
               for commit in $commits; do
-                git cherry-pick "$commit" || (echo "Cherry-pick failed for commit $commit" && git cherry-pick --abort && exit 1)
+                if ! git cherry-pick "$commit"; then
+                  echo "Cherry-pick failed for commit $commit, skipping..."
+                  git cherry-pick --abort
+                fi
               done
               
-              # Push to the branch on GitHub using the GITHUB_TOKEN
+              # Push to the branch on GitHub using the PAT
               git push origin "$branch"
+            else
+              echo "No commits found for prefix '${prefix}'"
             fi
           done
-
-
-       
