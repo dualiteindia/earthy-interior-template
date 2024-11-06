@@ -87,19 +87,31 @@ const Navbar = () => {
     `}
         >
           {/* Your menu content goes here */}
-          <div className="text-[20px] text-[#FFFFFF] font-raleway leading-[120%]">
+          <div
+            className="text-[20px] text-[#FFFFFF] font-raleway leading-[120%]"
+            onClick={() => navigate("/")}
+          >
             Home
           </div>
           <div className="h-0.5 w-full bg-[#8FA49E]"></div>
-          <div className="text-[20px] text-[#FFFFFF] font-raleway leading-[120%]">
+          <div
+            className="text-[20px] text-[#FFFFFF] font-raleway leading-[120%]"
+            onClick={() => navigate("/about-us")}
+          >
             About
           </div>
           <div className="h-0.5 w-full bg-[#8FA49E]"></div>
-          <div className="text-[20px] text-[#FFFFFF] font-raleway leading-[120%]">
+          <div
+            className="text-[20px] text-[#FFFFFF] font-raleway leading-[120%]"
+            onClick={() => navigate("/products")}
+          >
             Product
           </div>
           <div className="h-0.5 w-full bg-[#8FA49E]"></div>
-          <div className="text-[20px] font-raleway text-[#FFFFFF] leading-[120%]">
+          <div
+            className="text-[20px] font-raleway text-[#FFFFFF] leading-[120%]"
+            onClick={() => navigate("/contact-us")}
+          >
             Contact Us
           </div>
           <div className="h-0.5 w-full bg-[#8FA49E]"></div>

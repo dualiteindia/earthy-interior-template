@@ -1,61 +1,105 @@
-name: Prefix-Based Branch Creation
-
 on:
   push:
     branches:
       - main
 
 jobs:
-  cherry-pick-and-branch:
+  validate-and-cherry-pick:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history for all branches
 
-      - name: Set up Git user
+      - name: Configure Git User
         run: |
+          git config --global user.email "mukuldualite@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
 
-      - name: Fetch all branches
+      - name: Validate Commit Message
+        id: validate_commit
         run: |
-          git fetch --all
+          set -e  # Stop execution on error
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          echo "Commit message: $COMMIT_MSG"
+          
+          # Define the keywords
+          KEYWORDS=("fixed:" "polished:" "ready:" "misc:" "generated:")
+          
+          # Check if the commit message starts with any of the keywords
+          if [[ ! " ${KEYWORDS[@]} " =~ " ${COMMIT_MSG:0:${#KEYWORDS[0]}} " ]] &&
+             [[ ! " ${KEYWORDS[@]} " =~ " ${COMMIT_MSG:0:${#KEYWORDS[1]}} " ]] &&
+             [[ ! " ${KEYWORDS[@]} " =~ " ${COMMIT_MSG:0:${#KEYWORDS[2]}} " ]] &&
+             [[ ! " ${KEYWORDS[@]} " =~ " ${COMMIT_MSG:0:${#KEYWORDS[3]}} " ]] &&
+             [[ ! " ${KEYWORDS[@]} " =~ " ${COMMIT_MSG:0:${#KEYWORDS[4]}} " ]]; then
+            echo "Error: Commit message should start with 'fixed:', 'polished:', 'ready:', 'misc:', or 'generated:'."
+            exit 1
+          fi
 
-      - name: Filter Cherry-Pick Commits
-        env:
-          REPO_URL: "https://github.com/prashantSj789/Testing_regukation.git"
-          TOKEN: ${{ secrets.GI_TOKEN }}
+      - name: Get Commit Hash
+        id: commit_hash
         run: |
-          # Define prefixes and corresponding branch names
-          prefixes=("fixed" "polished" "ready" "misc" "generated")
-          for prefix in "${prefixes[@]}"; do
-            # Find commits with the prefix
-            commits=$(git log --format='%H %s' main | grep -E "^$prefix:" | awk '{print $1}')
-            if [[ -n "$commits" ]]; then
-              branch="${prefix}-branch"
-              
-              # Check if the branch exists, if not, create it from main
-              if ! git show-ref --quiet refs/heads/"$branch"; then
-                git checkout -b "$branch" origin/main
-              else
-                git checkout "$branch"
-                git merge origin/main
-              fi
-              
-              # Cherry-pick commits
-              for commit in $commits; do
-                git cherry-pick "$commit" || (echo "Cherry-pick failed for commit $commit" && git cherry-pick --abort && exit 1)
-              done
-              
-              # Push to the branch on GitHub using the PAT
-              git push "https://${TOKEN}@${REPO_URL#https://}" "$branch"
-            fi
-          done
-      - name: Push changes
-        env:
-          REPO_URL: "https://github.com/prashantSj789/Testing_regukation.git"
-          TOKEN: ${{ secrets.GI_TOKEN }}
+          set -e  # Stop execution on error
+          echo "commit_hash=$(git rev-parse HEAD)" >> $GITHUB_ENV
+
+      - name: Setup Git Remote with PAT
         run: |
-             git remote set-url origin https://prashantSj789:${PAT_TOKEN}@github.com/prashantSj789/Testing_regukation.git
-             git push origin --all
+          set -e  # Stop execution on error
+          # Use the GitHub PAT to set the remote URL
+          git remote set-url origin https://${{ secrets.GI_TOKEN }}:x-oauth-basic@github.com/mukuldualite/Amartesh.git
+          echo "Git remote URL set with PAT."
+
+      - name: Cherry-pick to seperate Branches
+        run: |
+                 set -e  # Stop execution on error
+                  
+                  # Get the latest commit message and hash
+                  COMMIT_MSG=$(git log -1 --pretty=%B)
+                  COMMIT_HASH=$(git rev-parse HEAD)
+
+                  # Define the prefixes and corresponding branches
+                  prefixes=("fixed:" "polished:" "ready:" "misc:" "generated:")
+                  branch=""
+
+                  # Determine the branch based on the commit prefix
+                  for prefix in "${prefixes[@]}"; do
+                    if [[ "$COMMIT_MSG" == "$prefix"* ]]; then
+                      branch="${prefix::-1}-branch"  # Remove colon and add '-branch'
+                      break
+                    fi
+                  done
+
+                  # If no matching prefix is found, skip the operation
+                  if [[ -z "$branch" ]]; then
+                    echo "No matching prefix found in the latest commit message. Skipping push."
+                    exit 0
+                  fi
+
+                  # Check if the branch exists; if not, create it from main
+                  if ! git show-ref --quiet refs/heads/"$branch"; then
+                    echo "Creating branch '$branch' from 'main'."
+                    git checkout -b "$branch" origin/main || { echo "Failed to create branch $branch"; exit 1; }
+                    git push origin "$branch" || { echo "Failed to push new branch $branch"; exit 1; }
+                  else
+                    echo "Branch '$branch' already exists. Checking it out."
+                    git checkout "$branch"
+                  fi
+
+                  # Attempt to cherry-pick the current commit
+                  if git cherry-pick "$COMMIT_HASH"; then
+                    # Push the current commit to the branch if cherry-pick was successful
+                    git push origin "$branch" || { echo "Failed to push changes to $branch"; exit 1; }
+                  else
+                    # If cherry-pick fails, check if the commit is empty
+                    if [[ $(git cherry-pick -n "$COMMIT_HASH" && git status --porcelain) == "" ]]; then
+                      echo "Cherry-pick resulted in no changes (the commit is empty). Skipping."
+                      git cherry-pick --abort  # Abort the cherry-pick as there is nothing to commit
+                      exit 0
+                    else
+                      echo "Cherry-pick failed for commit $COMMIT_HASH due to conflicts."
+                      git cherry-pick --abort  # Abort the cherry-pick due to conflicts
+                      exit 1
+                    fi
+                  fi

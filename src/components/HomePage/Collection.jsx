@@ -8,10 +8,11 @@ import aes from "../../assets/HomePage/aes.png";
 const Collection = () => {
   const [hovered, setHovered] = useState(null);
   return (
-    <div className="flex items-center w-full justify-end h-full py-[90px] pl-[68px] max-xmd:pl-[0] max-md:justify-end max-md:pl-[45px] max-sm:pl-[10px]">
-      <div className="w-full h-full gap-[93px] max-w-[95.3%]  flex items-center flex-row justify-between max-md:flex-col max-md:justify-center max-md:items-start  max-sm:max-h-[576px] max-md:h-[886px] max-md:gap-[45px]">
+    <div className="flex items-center w-full justify-end h-full py-[90px] pl-[68px] max-xmd:pl-[0] max-md:justify-end  max-sm:pl-[10px]">
+      <div className="w-full h-full gap-[93px]  max-w-[96.3%] flex items-center flex-row justify-between max-md:flex-col max-md:justify-center max-md:items-start  max-sm:max-h-[576px] max-md:h-[886px] max-md:gap-[45px]">
         {/* Left Content */}
-        <div className="w-full  max-w-[40.6%] flex flex-col gap-[36px] max-md:gap-[0]  justify-between  max-md:items-center max-sm:max-w-full max-sm:pr-[20px] max-md:pr-[40px] max-md:max-w-full max-xmd:max-w-[41.7%] max-md:flex-row ">
+        {/* <div className="w-full bg-red-900  max-w-[40.6%] flex flex-col gap-[36px] max-md:gap-[0]  justify-between  max-md:items-center max-sm:max-w-full max-sm:pr-[20px] max-md:pr-[40px] max-md:max-w-full max-xmd:max-w-[41.7%] max-md:flex-row "> */}
+        <div className="w-full  max-w-[557px] flex flex-col gap-[36px] max-md:gap-[0]  justify-between  max-md:items-center max-sm:max-w-full max-sm:pr-[20px] max-md:pr-[40px] max-md:max-w-full max-xmd:max-w-[41.7%] max-md:flex-row ">
           <h1 className="text-[64px] font-bold  font-raleway text-left leading-[120%] max-md:text-[40px] max-xmd:text-[48px] max-sm:text-[24px]">
             Elevating Spaces with{" "}
             <span className="text-[#214A3E] italic">Eco-Friendly</span> Elegance
