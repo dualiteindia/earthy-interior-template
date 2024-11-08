@@ -19,7 +19,7 @@ const ContactForm = () => {
   };
   const sendData = () => {
     setShowMsg(true);
-          setFormData({ name: "", email: "", subject: "", message: "" });
+    setFormData({ name: "", email: "", subject: "", message: "" });
     // emailjs
     //   .send(
     //     "YOUR_SERVICE_ID",
@@ -63,7 +63,7 @@ const ContactForm = () => {
         </div>
         <div className="flex gap-[30px] max-sm:flex-col items-center">
           <div className="w-[72.24%] max-sm:w-full flex justify-center items-center">
-            <div className="w-[83.67%] h-[637px] max-sm:w-full flex flex-col justify-between">
+            <div className="w-[83.67%] gap-y-[36px] max-sm:w-full flex flex-col justify-between">
               {/* <form> */}
               <div className="font-raleway text-[16px]">Your Name</div>
               <input
@@ -117,7 +117,6 @@ const ContactForm = () => {
                   <span className="absolute right-0 top-[-3px] border-t-[2px] border-r-[2px] border-white w-2 h-2 rotate-45"></span>
                 </span>
               </button>
-
               {/* </form> */}
             </div>
           </div>
