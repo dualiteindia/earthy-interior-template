@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import image1 from "../../assets/HomePage/Rectangle-15.png";
+import image1 from "../../assets/HomePage/col1.png";
 import image2 from "../../assets/HomePage/Rectangle-16.png";
 import image3 from "../../assets/HomePage/Rectangle-17.png";
-import trendy from "../../assets/HomePage/trendy.png";
-import aes from "../../assets/HomePage/aes.png";
+import trendy from "../../assets/HomePage/col2.png";
+import aes from "../../assets/HomePage/col3.png";
 
 const Collection = () => {
   const [hovered, setHovered] = useState(null);

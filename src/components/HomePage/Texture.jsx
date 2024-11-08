@@ -61,7 +61,10 @@ const Texture = () => {
       {/* Button */}
       <button
         className=" px-[24px] py-[13px] bg-[#214A3E] leading-[120%] gap-[14px] hover:bg-[#1D352E]  hover:w-[264px] transition-all duration-200 hover:gap-[20px] text-white text-[19px] rounded-full   w-[258px] h-[50px] flex items-center justify-center"
-        onClick={() => navigate("/products")}
+        onClick={() => {
+          navigate("/products");
+          window.scrollTo(0, 0); // Scrolls to the top of the page
+        }}
       >
         <div className="font-raleway text-[20px] font-medium">
           Make your Choice

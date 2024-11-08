@@ -63,7 +63,10 @@ const Area = () => {
 
           <button
             className="bg-[#214A3E] font-raleway w-[214px] h-[50px] hover:bg-[#1D352E]  hover:w-[220px] transition-all duration-200 text-white px-[24px] py-[13px] rounded-[89px] text-[20px] flex items-center justify-between group"
-            onClick={() => navigate("/products")}
+            onClick={() => {
+              navigate("/products");
+              window.scrollTo(0, 0); // Scrolls to the top of the page
+            }}
           >
             Our Products
             <span className=" w-[29px] h-[1px] bg-white inline-block relative transition-all duration-200 group-hover:ml-[20px]">

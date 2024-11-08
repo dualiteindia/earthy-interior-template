@@ -74,7 +74,10 @@ const Navbar = () => {
           </ul>
 
           {/* Explore Button */}
-          <button className="bg-[#10251F] max-xmd:text-[20px] font-raleway max-zmd:hidden flex w-[184px] h-[56px] justify-center items-center text-[#ece6d1] px-[46px] py-[17px] rounded-[81px] text-[24px] leading-[120%]">
+          <button
+            onClick={() => navigate("/products")}
+            className="bg-[#10251F] max-xmd:text-[20px] font-raleway max-zmd:hidden flex w-[184px] h-[56px] justify-center items-center text-[#ece6d1] px-[46px] py-[17px] rounded-[81px] text-[24px] leading-[120%]"
+          >
             EXPLORE
           </button>
         </div>
@@ -116,7 +119,10 @@ const Navbar = () => {
           </div>
           <div className="h-0.5 w-full bg-[#8FA49E]"></div>
           <div className="flex justify-center">
-            <button className="bg-[#10251F] font-raleway flex w-[285px] cursor-pointer h-[56px] justify-center items-center text-[#FFFCDB] rounded-[100px] text-[20px] leading-[120%]">
+            <button
+              onClick={() => navigate("/products")}
+              className="bg-[#10251F] font-raleway flex w-[285px] cursor-pointer h-[56px] justify-center items-center text-[#FFFCDB] rounded-[100px] text-[20px] leading-[120%]"
+            >
               EXPLORE
             </button>
           </div>

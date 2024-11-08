@@ -1,9 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import location from "../../assets/Contact/location.png";
 import clock from "../../assets/Contact/clock.png";
 import phone from "../../assets/Contact/phone.png";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
+  const [showMsg, setShowMsg] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const handleChange = (e) => {
+    setShowMsg(false);
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  const sendData = () => {
+    setShowMsg(true);
+          setFormData({ name: "", email: "", subject: "", message: "" });
+    // emailjs
+    //   .send(
+    //     "YOUR_SERVICE_ID",
+    //     "YOUR_TEMPLATE_ID",
+    //     {
+    //       user_name: formData.name,
+    //       user_email: formData.email,
+    //       subject: formData.subject,
+    //       message: formData.message,
+    //     },
+    //     "YOUR_PUBLIC_KEY"
+    //   )
+    //   .then(
+    //     (response) => {
+    //       console.log(
+    //         "Email sent successfully!",
+    //         response.status,
+    //         response.text
+    //       );
+    //       setShowMsg(true);
+    //       setFormData({ name: "", email: "", subject: "", message: "" });
+    //     },
+    //     (error) => {
+    //       console.error("Failed to send email:", error);
+    //       alert("An error occurred. Please try again.");
+    //     }
+    //   );
+  };
   return (
     <div className="w-full h-[1144px] max-sm:h-[1305px] flex justify-center items-center max-sm:py-[58px]">
       <div className=" w-[73.63%] max-md:w-[96.22%] h-[879px] max-sm:h-full  flex flex-col justify-between">
@@ -24,31 +68,55 @@ const ContactForm = () => {
               <div className="font-raleway text-[16px]">Your Name</div>
               <input
                 type="text"
+                name="name"
+                value={formData.name}
                 placeholder="John Doe"
                 className="bg-[#F5F8F4] placeholder:font-raleway placeholder:text-[16px] w-full h-[75px] p-3"
+                onChange={handleChange}
               />
               <div className="font-raleway text-[16px]">Email Address</div>
               <input
                 type="text"
+                name="email"
+                value={formData.email}
                 placeholder="JohnDoe@gmail.com"
                 className="bg-[#F5F8F4] placeholder:font-raleway placeholder:text-[16px] w-full h-[75px] p-3"
+                onChange={handleChange}
               />
               <div className="font-raleway text-[16px]">Subject</div>
               <input
                 type="text"
+                name="subject"
+                value={formData.subject}
                 placeholder="This is optional"
                 className="bg-[#F5F8F4] placeholder:font-raleway placeholder:text-[16px] w-full h-[75px] p-3"
+                onChange={handleChange}
               />
               <div className="font-raleway text-[16px]">Message</div>
-              {/* <input
-                type="text"
-                placeholder="Hi I'd like to ask about"
-                className="bg-[#F5F8F4] placeholder:font-raleway placeholder:text-[16px] w-full h-[120px] pt-2 pl-3"
-              /> */}
+
               <textarea
+                name="message"
+                value={formData.message}
                 placeholder="Hi I'd like to ask about"
                 className="bg-[#F5F8F4] placeholder:font-raleway placeholder:text-[16px] w-full h-[120px] p-3 resize-none"
+                onChange={handleChange}
               />
+              {showMsg && (
+                <div className="font-raleway font-bold text-[#8FA49E] text-[18px] max-md:text-[14px]">
+                  Your Message has been sent Successfully!
+                </div>
+              )}
+
+              <button
+                type="submit"
+                className="bg-[#214A3E]  font-raleway w-[150px] h-[50px] hover:bg-[#1D352E]  hover:w-[164px] transition-all duration-200 text-white px-[24px] py-[13px] rounded-[89px] text-[20px] flex items-center justify-between group"
+                onClick={sendData}
+              >
+                Submit
+                <span className="ml-[14px] w-8 h-[1px] bg-white inline-block relative transition-all duration-200 group-hover:ml-[20px]">
+                  <span className="absolute right-0 top-[-3px] border-t-[2px] border-r-[2px] border-white w-2 h-2 rotate-45"></span>
+                </span>
+              </button>
 
               {/* </form> */}
             </div>
@@ -83,7 +151,7 @@ const ContactForm = () => {
               </div>
               <div className="flex gap-[34px]">
                 {/* <div className="w-[23px] h-[23px] mt-2"> */}
-                  <img src={clock} className="w-[23px] h-[23px] mt-2" />
+                <img src={clock} className="w-[23px] h-[23px] mt-2" />
                 {/* </div> */}
                 <div className="flex flex-col ">
                   <div className="font-raleway font-semibold text-[24px] ">

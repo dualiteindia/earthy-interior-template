@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import image1 from "../../assets/HomePage/1.png";
-import image2 from "../../assets/HomePage/2.jpg";
-import image3 from "../../assets/HomePage/3.jpg";
+import image2 from "../../assets/HomePage/frame2.png";
+import image3 from "../../assets/HomePage/frame3.png";
 import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
@@ -11,27 +11,42 @@ const HeroSection = () => {
 
   // State to track the current background image index
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // State to control the automatic carousel
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
 
-  // Change image every 2 seconds
+  // Change image every 2 seconds if autoplay is enabled
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000);
+    let interval;
+    if (isAutoPlay) {
+      interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 2000);
+    }
 
-    // Clear interval on component unmount
+    // Clear interval on component unmount or when autoplay is disabled
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [images.length, isAutoPlay]);
+
+  // Handle dot click and stop autoplay
   const handleDotClick = (index) => {
     setCurrentImageIndex(index);
+    setIsAutoPlay(false); // Stop autoplay when a dot is clicked
   };
+
   return (
     <section
       className="relative bg-cover bg-center h-[760px] w-full p-[10px] flex justify-center items-center max-sm:h-[520px]"
       style={{
         backgroundImage: `url(${images[currentImageIndex]})`,
-        transition: "background-image 1s ease-in-out",
+        transition: "background-image 0.2s ease-in-out",
+        backgroundSize: "cover",
+        // backgroundPosition:"center"
       }}
     >
+      <div
+    className="absolute inset-0 bg-black opacity-30"
+    style={{ zIndex: 1 }}
+  ></div>
       <div className="w-[1228px] flex flex-col items-center justify-center gap-[180px]">
         <div className="relative z-10 flex flex-col justify-center items-center h-full gap-[25px] text-center px-4">
           <h1 className="text-[64px] font-raleway font-bold text-white text-center leading-[120%] max-md:text-[32px] max-sm:text-[24px]">
@@ -48,7 +63,10 @@ const HeroSection = () => {
             className="font-raleway w-[330px] max-sm:w-[250px] max-sm:h-[44px] h-[63px] gap-[16px] hover:gap-[22px] hover:w-[336px] text-[20px] bg-white/5 max-sm:text-[14px] backdrop-blur-sm hover:backdrop-blur-lg border border-white text-white py-[16px] px-[23px] rounded-[97px] transition-all flex items-center justify-center relative"
             style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
             aria-label="Explore our collection"
-            onClick={() => navigate("/products")}
+            onClick={() => {
+              navigate("/products");
+              window.scrollTo(0, 0); // Scrolls to the top of the page
+            }}
           >
             Explore Our Collection
             <span className="w-[57px] max-sm:w-[40px] h-[1px] bg-white inline-block relative">

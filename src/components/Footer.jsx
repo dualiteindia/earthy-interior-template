@@ -61,18 +61,18 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="text-left space-y-[14px] max-zsm:text-center max-sm:h-[246px]">
-            <h3 className="font-bold font-raleway text-[20px] leading-[18px]">
+          <div className="text-left flex flex-col space-y-[14px] gap-[8px] max-zsm:text-center max-sm:h-[246px]">
+            <h3 className="font-bold tracking-[1.5px] font-raleway text-[20px] leading-[18px]">
               CONTACT
             </h3>
             {/* <p className="text-[24px] font-roboto font-extralight max-md:text-[20px] max-ysm:text-[16px]"> */}
-            <p className="text-[24px] font-roboto font-extralight max-md:text-[20px] max-534px:text-[16px]">
+            <p className="text-[24px] font-roboto leading-[120%] font-extralight max-md:text-[20px] max-534px:text-[16px]">
               info@cementolime.com
               <br />
               www.cementolime.com
             </p>
-            <p className="font-bold pt-[10px] font-raleway text-[20px]">HELPLINE</p>
-            <p className="text-[24px] font-roboto font-extralight max-md:text-[20px] max-sm:text-[16px]">
+            <p className="font-bold pt-[20px] leading-[18px] tracking-[1.5px] font-raleway text-[20px]">HELPLINE</p>
+            <p className="text-[24px] font-roboto font-extralight leading-[120%] max-md:text-[20px] max-sm:text-[16px]">
               +91 9580628537
             </p>
           </div>
@@ -96,13 +96,13 @@ const Footer = () => {
 
             {/* Right-side (Social Media Icons) */}
             <div className="flex gap-[23px]">
-              <div className="w-[60px] h-[60px] rounded-full flex justify-center items-center bg-white bg-opacity-15 border-white border-[1px] border-opacity-50	 px-[13px] py-[12px]">
+              <div className="w-[60px] cursor-pointer h-[60px] rounded-full flex justify-center items-center bg-white bg-opacity-15 border-white border-[1px] border-opacity-50	 px-[13px] py-[12px]">
                 <img src={image1} className="w-[34px] h-[34px]" />
               </div>
-              <div className="w-[60px] h-[60px] rounded-full flex justify-center items-center bg-white bg-opacity-15 border-white border-[1px] border-opacity-50	 px-[13px] py-[12px]">
+              <div className="w-[60px] h-[60px] cursor-pointer rounded-full flex justify-center items-center bg-white bg-opacity-15 border-white border-[1px] border-opacity-50	 px-[13px] py-[12px]">
                 <img src={image2} className="w-[30px] h-[30px]" />
               </div>
-              <div className="w-[60px] flex justify-center items-center h-[60px] rounded-full bg-white bg-opacity-15 border-white border-[1px] border-opacity-50	 px-[13px] py-[12px]">
+              <div className="w-[60px] flex justify-center cursor-pointer items-center h-[60px] rounded-full bg-white bg-opacity-15 border-white border-[1px] border-opacity-50	 px-[13px] py-[12px]">
                 <img src={image3} className="w-[30px] h-[30px]" />
               </div>
             </div>

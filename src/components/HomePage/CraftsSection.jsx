@@ -73,7 +73,10 @@ const CraftsSection = () => {
                 {/* <div className="absolute inset-0 flex items-center justify-center"> */}
                 <div
                   className="max-md:text-[15px] text-white text-[36px] underline  max-635px:text-[12px] cursor-pointer font-raleway"
-                  onClick={() => navigate("/products")}
+                  onClick={() => {
+                    navigate("/products");
+                    window.scrollTo(0, 0); // Scrolls to the top of the page
+                  }}
                 >
                   Show More
                   {/* </div> */}

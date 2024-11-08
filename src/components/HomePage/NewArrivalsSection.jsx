@@ -31,7 +31,10 @@ const NewArrivalsSection = () => {
         {/* Button with Arrow */}
         <button
           className=" font-raleway hover:bg-[#1D352E]  hover:w-[185px] transition-all duration-200 w-[179px] hover:gap-[20px] h-[50px] flex gap-[14px] text-[20px] relative bg-[#214A3E] py-[13px] px-[20px] rounded-full text-white  flex items-center justify-center transition-all"
-          onClick={() => navigate("/products")}
+          onClick={() => {
+            navigate("/products");
+            window.scrollTo(0, 0); // Scrolls to the top of the page
+          }}
         >
           Purchase
           <span className="  w-[29px] h-[1px] bg-white inline-block relative">
