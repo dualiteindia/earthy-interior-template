@@ -1,5 +1,5 @@
 import { useState } from "react";
-import image from "../assets/HomePage/LOGO.png";
+import image from "../assets/HomePage/LOGO.svg";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -14,8 +14,8 @@ const Navbar = () => {
     <div>
       <nav className="bg-[#214A3E] flex justify-center items-center h-[90px] w-[100%]">
         {/* Logo */}
-        <div className="flex justify-between items-center w-[90%] max-xmd:w-[95%]">
-          <img src={image} className="h-[21px]" />
+        <div className="flex justify-between cursor-pointer items-center w-[90%] max-xmd:w-[95%]">
+          <img src={image} className="h-[21px]" onClick={() => navigate("/")} />
 
           {/* Hamburger Icon */}
           <div

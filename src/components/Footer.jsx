@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../assets/HomePage/image-10.png";
+import image from "../assets/HomePage/flogo.svg";
 import image1 from "../assets/HomePage/x.png";
 import image2 from "../assets/HomePage/instagram.png";
 import image3 from "../assets/HomePage/facebook.png";
