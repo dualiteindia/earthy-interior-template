@@ -152,7 +152,7 @@ const ContactForm = () => {
                   <div className="font-raleway font-semibold text-[24px] ">
                     Phone
                   </div>
-                  <div className="font-roboto text-[20px] font-light">
+                  <div className="font-roboto text-[20px] max-sm:text-[16px]  font-light max-zsm:text-[2.9vw]">
                     +91 9580682537
                   </div>
                 </div>
@@ -165,7 +165,7 @@ const ContactForm = () => {
                   <div className="font-raleway font-semibold text-[24px] ">
                     Working Time
                   </div>
-                  <div className="font-raleway text-[16px] font-light">
+                  <div className="font-raleway text-[16px] max-sm:text-[16px] font-light max-zsm:text-[3vw]">
                     Monday-Friday: 9:00 - 22:00 <br /> Saturday-Sunday: 9:00 -
                     21:00
                   </div>

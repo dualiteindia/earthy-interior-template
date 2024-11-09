@@ -39,7 +39,6 @@ const Navbar = () => {
             ></span>
           </div>
 
-          {/* Dropdown Menu */}
           <ul className="flex justify-between font-raleway max-w-[533px] max-xmd:items-center flex max-zmd:hidden max-xmd:min-w-[466px]">
             <div
               className="px-[28px] max-xmd:px-[23px] max-xmd:h-[34px] max-xmd:py-[5px] py-[9px] hover:bg-[#556f64] hover:cursor-pointer flex items-center rounded-full text-center"
@@ -88,6 +87,7 @@ const Navbar = () => {
       ${isMenuOpen ? "flex h-[349px] py-[25px]" : "h-0 overflow-hidden "}
       transition-all duration-300 ease-out z-50
     `}
+          onClick={toggleMenu}
         >
           {/* Your menu content goes here */}
           <div
