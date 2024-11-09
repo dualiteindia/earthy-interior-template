@@ -7,7 +7,7 @@ import image4 from "../../assets/Contact/services4.png";
 const Services = () => {
   return (
     <div className=" flex bg-[#E5EDE4] w-full h-[270px] max-sm:h-[621px] max-md:h-[316px] max-md:px-4 items-center justify-center">
-      <div className="w-[92.64%]  max-sm:h-[473px] max-sm:gap-[38px] max-md:w-[602px] max-sm:w-[338px] flex justify-between 1560px:gap-[13vw] items-center max-md:h-[217px] max-sm:flex-col">
+      <div className="w-[92.64%] max-sm:h-[473px] max-sm:gap-[60px] max-md:w-[602px] max-sm:w-[338px] flex justify-between 1560px:gap-[13vw] items-center max-md:h-[217px] max-sm:flex-col">
         {/* <div className="flex  bg-red-900 w-[700px] max-sm:h-[50%] max-md:w-[52.32%] h-full max-sm:w-full justify-between max-md:flex-col"> */}
         <div className="flex   w-[52.46%] max-sm:h-[50%] max-md:w-[52.32%] h-full max-sm:w-full justify-between max-md:flex-col">
         {/* <div className="flex   w-[52.47%] max-sm:h-[50%] max-md:w-[52.32%] h-full max-sm:w-full justify-between max-md:flex-col"> */}

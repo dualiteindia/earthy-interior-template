@@ -49,20 +49,21 @@ const ContactForm = () => {
     //   );
   };
   return (
-    <div className="w-full h-[1144px] max-sm:h-[1305px] max-sm:h-[1455px] flex justify-center items-center max-sm:py-[58px]">
-      <div className=" w-[73.63%] max-md:w-[96.22%] h-[993px] max-sm:h-full  max-sm:w-[84.47%] flex flex-col justify-between  ">
+    // <div className="w-full h-[1144px] max-sm:h-[1305px] max-sm:h-[1455px] flex justify-center items-center max-sm:py-[58px]">
+    <div className="w-full h-[1144px]  max-sm:h-[1455px] flex justify-center items-center max-sm:py-[58px]">
+      <div className=" w-[73.63%] max-md:w-[96.22%] h-[993px] max-sm:h-full  max-sm:w-[84.47%] flex flex-col justify-between max-sm:justify-start max-sm:gap-[50px]  ">
         <div className="flex w-full items-center flex-col gap-[19px] max-sm:gap-[28px] ">
           <div className="font-raleway font-bold text-center text-[36px] max-sm:text-[32px] ">
             Get In Touch With Us
           </div>
-          <div className="font-raleway text-[16px] font-light text-[#9F9F9F] max-w-[644px] text-center">
+          <div className="font-raleway text-[16px] font-light text-[#9F9F9F] max-w-[644px] leading-[120%] text-center">
             For More Information About Our Product & Services. Please Feel Free
             To Drop Us An Email. Our Staff Always Be There To Help You Out. Do
             Not Hesitate!
           </div>
         </div>
-        <div className="flex gap-[30px]  max-sm:flex-col items-center">
-          <div className="w-[72.24%] max-sm:w-full flex justify-center items-center">
+        <div className="flex gap-[30px] max-sm:gap-[70px] max-sm:flex-col items-center">
+          <div className="w-[72.24%] max-sm:w-full flex  justify-center items-center">
             <div className="w-[83.67%]  gap-y-[36px] max-sm:w-full flex flex-col justify-between">
               {/* <form> */}
               <div>
@@ -72,7 +73,7 @@ const ContactForm = () => {
                   name="name"
                   value={formData.name}
                   placeholder="John Doe"
-                  className="bg-[#F5F8F4] placeholder:font-raleway mt-4 placeholder:text-[16px] w-full h-[75px] p-3"
+                  className="bg-[#F5F8F4] placeholder:font-raleway mt-4 placeholder:text-[16px] w-full h-[75px] max-sm:h-[61px] p-3"
                   onChange={handleChange}
                 />
               </div>
@@ -83,7 +84,7 @@ const ContactForm = () => {
                   name="email"
                   value={formData.email}
                   placeholder="JohnDoe@gmail.com"
-                  className="bg-[#F5F8F4] placeholder:font-raleway mt-4 placeholder:text-[16px] w-full h-[75px] p-3"
+                  className="bg-[#F5F8F4] placeholder:font-raleway mt-4 placeholder:text-[16px] w-full h-[75px] max-sm:h-[61px] p-3"
                   onChange={handleChange}
                 />
               </div>
@@ -94,7 +95,7 @@ const ContactForm = () => {
                   name="subject"
                   value={formData.subject}
                   placeholder="This is optional"
-                  className="bg-[#F5F8F4] placeholder:font-raleway mt-4 placeholder:text-[16px] w-full h-[75px] p-3"
+                  className="bg-[#F5F8F4] placeholder:font-raleway mt-4 placeholder:text-[16px] w-full h-[75px] max-sm:h-[61px] p-3"
                   onChange={handleChange}
                 />
               </div>
@@ -105,7 +106,7 @@ const ContactForm = () => {
                   name="message"
                   value={formData.message}
                   placeholder="Hi I'd like to ask about"
-                  className="bg-[#F5F8F4] placeholder:font-raleway mt-4 placeholder:text-[16px] w-full h-[120px] p-3 resize-none"
+                  className="bg-[#F5F8F4] placeholder:font-raleway mt-4 placeholder:text-[16px] w-full h-[120px] max-sm:h-[97px] p-3 resize-none"
                   onChange={handleChange}
                 />
               </div>
@@ -128,7 +129,7 @@ const ContactForm = () => {
               {/* </form> */}
             </div>
           </div>
-          <div className="w-[44.74%] max-sm:w-full  flex flex-col h-full max-sm:items-center">
+          <div className="w-[44.74%] max-sm:w-full flex flex-col h-full max-sm:items-center">
             <div className="w-full h-[363px] justify-between flex flex-col max-sm:w-[70%] ">
               <div className="flex gap-[34px] ">
                 <div className="w-[22px] h-[29px] mt-2">
