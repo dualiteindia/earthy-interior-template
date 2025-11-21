@@ -1,8 +1,3 @@
-import React from "react";
-import image from "../assets/HomePage/brand_logo.png";
-import image1 from "../assets/HomePage/x.png";
-import image2 from "../assets/HomePage/instagram.png";
-import image3 from "../assets/HomePage/facebook.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -13,7 +8,13 @@ const Footer = () => {
         <div className="flex justify-between flex-wrap max-zmd:grid max-zmd:grid-cols-2 max-zmd:gap-[96px] max-zsm:flex max-zsm:flex-col ">
           <div className="pr-[17px] pb-[45px] max-w-[295px]   flex flex-col gap-[25px] max-md:pb-0 max-zsm:items-center max-zsm:max-w-[580px] max-sm:pr-0">
             <div className="flex items-center space-x-3 ">
-              <img src={image} alt="Logo" className="h-[137px] w-[139px]" />
+              <img
+                src={
+                  "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/brand_logo.png"
+                }
+                alt="Logo"
+                className="h-[137px] w-[139px]"
+              />
             </div>
             <p className="text-[14px] tracking-[5%] leading-[120%] text-left font-roboto font-extralight max-zsm:text-center max-sm:text-[12px]">
               Inspired by the raw beauty of stone, sand, & marble. Our textures bring the calming essence of nature
@@ -97,13 +98,28 @@ const Footer = () => {
             {/* Right-side (Social Media Icons) */}
             <div className="flex gap-[23px]">
               <div className="w-[60px] cursor-pointer h-[60px] rounded-full flex justify-center items-center bg-white bg-opacity-15 border-white border-[1px] border-opacity-50	 px-[13px] py-[12px]">
-                <img src={image1} className="w-[34px] h-[34px]" />
+                <img
+                  src={
+                    "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/x.png"
+                  }
+                  className="w-[34px] h-[34px]"
+                />
               </div>
               <div className="w-[60px] h-[60px] cursor-pointer rounded-full flex justify-center items-center bg-white bg-opacity-15 border-white border-[1px] border-opacity-50	 px-[13px] py-[12px]">
-                <img src={image2} className="w-[30px] h-[30px]" />
+                <img
+                  src={
+                    "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/instagram.png"
+                  }
+                  className="w-[30px] h-[30px]"
+                />
               </div>
               <div className="w-[60px] flex justify-center cursor-pointer items-center h-[60px] rounded-full bg-white bg-opacity-15 border-white border-[1px] border-opacity-50	 px-[13px] py-[12px]">
-                <img src={image3} className="w-[30px] h-[30px]" />
+                <img
+                  src={
+                    "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/facebook.png"
+                  }
+                  className="w-[30px] h-[30px]"
+                />
               </div>
             </div>
           </div>

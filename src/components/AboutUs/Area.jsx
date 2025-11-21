@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import plus from "../../assets/AboutUs/plus.png";
-import cross from "../../assets/AboutUs/cross.png";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const materials = [
@@ -109,7 +107,14 @@ const Area = () => {
               <div className="flex justify-between items-center text-[#214A3E] font-raleway text-[24px] leading-[120%] max-sm:text-[16px]">
                 0{index + 1} {material.title}
                 <div className="w-[36px] cursor-pointer rounded-[18px] h-[36px] flex justify-center items-center bg-[#DCDFE3]">
-                  <img src={expandedId === material.id ? cross : plus} className="w-[12px] h-[12px]" />
+                  <img
+                    src={
+                      expandedId === material.id
+                        ? "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/aboutus/cross.png"
+                        : "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/aboutus/plus.png"
+                    }
+                    className="w-[12px] h-[12px]"
+                  />
                 </div>
               </div>
               <div

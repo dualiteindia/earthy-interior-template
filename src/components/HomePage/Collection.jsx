@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import image1 from "../../assets/HomePage/collection_1.png";
-import trendy from "../../assets/HomePage/collection_2.png";
-import aes from "../../assets/HomePage/collection_3.png";
 
 const Collection = () => {
   const [hovered, setHovered] = useState(null);
@@ -51,7 +48,7 @@ const Collection = () => {
               hovered === "second" || hovered === "third" ? "w-[25%] pl-[10px]" : "w-[50%] h-full"
             } transform transition-width duration-700 ease-out rounded-[20px]`}
             style={{
-              backgroundImage: `url(${image1})`,
+              backgroundImage: `url("https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/collection_1.png")`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -71,7 +68,7 @@ const Collection = () => {
               hovered === "second" ? "w-[50%]" : "w-[25%] h-full"
             } transform transition-width rounded-[20px] duration-700 ease-out`}
             style={{
-              backgroundImage: `url(${aes})`,
+              backgroundImage: `url("https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/collection_2.png")`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -93,7 +90,7 @@ const Collection = () => {
               hovered === "third" ? "w-[50%]" : "w-[25%] h-full"
             } transform transition-width rounded-[20px] duration-700 ease-out`}
             style={{
-              backgroundImage: `url(${trendy})`,
+              backgroundImage: `url("https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/collection_3.png")`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}

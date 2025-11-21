@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-import location from "../../assets/Contact/location.png";
-import clock from "../../assets/Contact/clock.png";
-import phone from "../../assets/Contact/phone.png";
-import emailjs from "emailjs-com";
 
 const ContactForm = () => {
   const [showMsg, setShowMsg] = useState(false);
@@ -132,7 +128,12 @@ const ContactForm = () => {
             <div className="w-full h-[363px] justify-between flex flex-col max-sm:w-[70%] ">
               <div className="flex gap-[34px] ">
                 <div className="w-[22px] h-[29px] mt-2">
-                  <img src={location} className="w-full h-full" />
+                  <img
+                    src={
+                      "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/contact/location.png"
+                    }
+                    className="w-full h-full"
+                  />
                 </div>
                 <div className="flex flex-col   ">
                   <div className="font-raleway font-semibold text-[24px] ">Address</div>
@@ -141,7 +142,12 @@ const ContactForm = () => {
               </div>
               <div className="flex gap-[25px]">
                 <div className="w-[30px] h-[30px] mt-2">
-                  <img src={phone} className="w-full h-full" />
+                  <img
+                    src={
+                      "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/contact/phone.png"
+                    }
+                    className="w-full h-full"
+                  />
                 </div>
                 <div className="flex flex-col ">
                   <div className="font-raleway font-semibold text-[24px] ">Phone</div>
@@ -152,7 +158,12 @@ const ContactForm = () => {
               </div>
               <div className="flex gap-[34px]">
                 {/* <div className="w-[23px] h-[23px] mt-2"> */}
-                <img src={clock} className="w-[23px] h-[23px] mt-2" />
+                <img
+                  src={
+                    "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/contact/clock.png"
+                  }
+                  className="w-[23px] h-[23px] mt-2"
+                />
                 {/* </div> */}
                 <div className="flex flex-col ">
                   <div className="font-raleway font-semibold text-[24px] ">Working Time</div>

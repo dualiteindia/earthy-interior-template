@@ -1,5 +1,4 @@
 import React from "react";
-import image from "../../assets/HomePage/new_arrival.png";
 import { useNavigate } from "react-router-dom";
 const NewArrivalsSection = () => {
   const navigate = useNavigate();
@@ -7,7 +6,7 @@ const NewArrivalsSection = () => {
     <section
       className="relative h-[615px] flex items-start justify-start px-[260px] py-[98px] w-full max-md:px-[100px] max-sm:px-[35px] bg-center"
       style={{
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url("https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/new_arrival.png")`,
         backgroundSize: "cover",
       }}
     >

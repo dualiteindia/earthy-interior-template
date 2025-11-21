@@ -1,6 +1,4 @@
 import React from "react";
-import image1 from "../../assets/Product/Rectangle1.png";
-import image2 from "../../assets/Product/Rectangle2.png";
 
 const Caption = () => {
   return (

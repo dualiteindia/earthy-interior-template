@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import image from "../../assets/HomePage/Vector.png";
-import image1 from "../../assets/HomePage/Vector1.png";
 
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -38,12 +36,10 @@ const FAQSection = () => {
       <div className="h-full flex w-full pt-[82px] gap-[73px] flex-col items-center max-sm:pb-[82px] max-sm:gap-[36px]">
         <div className="flex flex-col gap-[36px] max-sm:gap-[18px]">
           <h2 className="text-[64px] w-full font-bold font-raleway text-center max-md:text-[48px] max-sm:text-[24px]">
-            Frequently Asked{" "}
-            <span className="text-[#214A3E] italic">Questions</span>
+            Frequently Asked <span className="text-[#214A3E] italic">Questions</span>
           </h2>
           <p className="text-center font-raleway  text-[#214A3E] text-[20px] max-md:text-[15px]">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro
-            beatae error laborum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro beatae error laborum.
           </p>
         </div>
         {/* <div className="max-w-[852px] w-full ">
@@ -98,7 +94,11 @@ const FAQSection = () => {
                     </h3>
                     <div>
                       <img
-                        src={activeIndex === index ? image1 : image}
+                        src={
+                          activeIndex === index
+                            ? "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/Vector1.png"
+                            : "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/Vector.png"
+                        }
                         className=""
                       />
                     </div>
@@ -110,9 +110,7 @@ const FAQSection = () => {
                   >
                     {activeIndex === index && (
                       <div className="leading-[28px]">
-                        <p className="text-[#214A3E] font-medium text-[18px] max-sm:text-[12px]">
-                          {question.answer}
-                        </p>
+                        <p className="text-[#214A3E] font-medium text-[18px] max-sm:text-[12px]">{question.answer}</p>
                       </div>
                     )}
                   </div>

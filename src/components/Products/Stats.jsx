@@ -7,9 +7,7 @@ const Stats = () => {
       <div className="text-white max-sm:h-[100px]  flex justify-between items-end text-center">
         <div className="w-[33%] border-r-[1px] border-[#FFFFFF]  flex flex-col h-[100%] justify-center  ">
           <div className=" flex flex-col items-center  ">
-            <p className="text-[40px] font-raleway leading-[120%]  max-sm:text-[36px]">
-              7
-            </p>
+            <p className="text-[40px] font-raleway leading-[120%]  max-sm:text-[36px]">10</p>
             <p className="text-[20px] max-sm:text-[15px] tracking-[1%] font-raleway leading-[130%] font-light w-[112px]">
               Years of Experience
             </p>
@@ -17,23 +15,19 @@ const Stats = () => {
         </div>
         <div className="w-[33%]  flex flex-col justify-center  h-full   ">
           <div className=" flex flex-col items-center ">
-          <p className="text-[40px] font-raleway leading-[120%] max-sm:text-[36px]">
-            10k+
-          </p>
-          <p className="text-[20px] tracking-[1%] font-raleway leading-[130%] font-light max-sm:text-[15px]">
-            Customers
-          </p>
-        </div>
+            <p className="text-[40px] font-raleway leading-[120%] max-sm:text-[36px]">100k+</p>
+            <p className="text-[20px] tracking-[1%] font-raleway leading-[130%] font-light max-sm:text-[15px]">
+              Customers
+            </p>
+          </div>
         </div>
         <div className="w-[33%]  border-l-[1px] border-[#FFFFFF] h-full justify-center  flex flex-col    ">
-        <div className=" flex flex-col items-center ">
-          <p className="text-[40px] font-raleway leading-[120%] max-sm:text-[36px]">
-            260+
-          </p>
-          <p className="text-[20px] tracking-[1%] font-raleway leading-[130%] font-light w-[112px] max-sm:text-[15px]">
-            Furnish Variants
-          </p>
-        </div>
+          <div className=" flex flex-col items-center ">
+            <p className="text-[40px] font-raleway leading-[120%] max-sm:text-[36px]">500+</p>
+            <p className="text-[20px] tracking-[1%] font-raleway leading-[130%] font-light w-[112px] max-sm:text-[15px]">
+              Furnish Variants
+            </p>
+          </div>
         </div>
       </div>
     </div>

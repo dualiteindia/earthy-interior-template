@@ -1,6 +1,3 @@
-import image1 from "../../assets/AboutUs/who_we_are_1.png";
-import image2 from "../../assets/AboutUs/who_we_are_2.png";
-
 const About = () => {
   return (
     <div className="w-[100%]" id="aboutus">
@@ -34,14 +31,18 @@ const About = () => {
           <div className=" max-w-[592px] w-full h-[560px] max-sm:h-[348px] flex justify-center gap-[16px] max-sm:gap-[8px]">
             <div className="flex h-full w-full max-sm:w-[43.62%]  max-sm:pt-6">
               <img
-                src={image1}
+                src={
+                  "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/aboutus/who_we_are_1.png"
+                }
                 alt="Decorative Image"
                 className=" w-[280px] h-[480px] max-sm:w-full max-sm:h-[258px]"
               />
             </div>
             <div className="flex h-full w-full max-sm:w-[54.46%]  items-end max-sm:pb-6">
               <img
-                src={image2}
+                src={
+                  "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/aboutus/who_we_are_2.png"
+                }
                 alt="Decorative Image"
                 className=" w-[280px] h-[480px] max-sm:w-full max-sm:h-[258px]"
               />

@@ -1,8 +1,3 @@
-import React from "react";
-import image1 from "../../assets/AboutUs/Service1.png";
-import image2 from "../../assets/AboutUs/Service2.png";
-import image3 from "../../assets/AboutUs/Service3.png";
-
 const Services = () => {
   return (
     <div className="w-[100%]  flex   items-center justify-center py-[112px]  max-md:px-[32px]">
@@ -24,7 +19,12 @@ const Services = () => {
         <div className="flex h-full gap-[32px] w-full max-sm:flex-col ">
           <div className="flex py-[40px]  w-full gap-[80px] max-md:gap-[40px] border-4 border-[#8FA49E] justify-center items-center flex-col ">
             <div className="flex w-[85.67%] ">
-              <img src={image1} className="w-[48px] h-[48px]" />
+              <img
+                src={
+                  "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/aboutus/Service1.png"
+                }
+                className="w-[48px] h-[48px]"
+              />
             </div>
             <div className="flex gap-[16px] w-[85.67%] flex-col ">
               <div className="font-raleway text-[32px] max-ssm:text-[3vw] max-842px:text-[24px] max-md:text-[16px] max-md:leading-[28.8px] font-bold text-[#214A3E] leading-[48px]">
@@ -39,7 +39,12 @@ const Services = () => {
           </div>
           <div className="flex py-[40px]  w-full gap-[80px] max-md:gap-[40px] border-4 border-[#8FA49E] justify-start items-center flex-col ">
             <div className="flex w-[85.67%]  ">
-              <img src={image2} className="w-[48px] h-[48px]" />
+              <img
+                src={
+                  "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/aboutus/Service2.png"
+                }
+                className="w-[48px] h-[48px]"
+              />
             </div>
             <div className="flex  gap-[16px] w-[85.67%] flex-col ">
               <div className="font-raleway text-[32px] max-842px:text-[24px] max-md:text-[16px] max-md:leading-[28.8px] font-bold text-[#214A3E] leading-[48px]">
@@ -53,7 +58,12 @@ const Services = () => {
           </div>
           <div className="flex py-[40px] w-full gap-[80px] max-md:gap-[40px] border-4 border-[#8FA49E] justify-start items-center flex-col ">
             <div className="flex w-[85.67%]  ">
-              <img src={image3} className="w-[48px] h-[48px]" />
+              <img
+                src={
+                  "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/aboutus/Service3.png"
+                }
+                className="w-[48px] h-[48px]"
+              />
             </div>
             <div className="flex gap-[16px] w-[85.67%] flex-col  ">
               <div className="font-raleway text-[32px]  max-ssm:text-[3vw] max-842px:text-[24px] max-md:text-[16px] max-md:leading-[28.8px] font-bold text-[#214A3E] leading-[48px]">

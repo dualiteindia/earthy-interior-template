@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import image1 from "../../assets/HomePage/carousel_1.png";
-import image2 from "../../assets/HomePage/carousel_2.png";
-import image3 from "../../assets/HomePage/carousel_3.png";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 const HeroSection = () => {
   // Array of images for the carousel
-  const images = [image1, image2, image3];
+  const images = [
+    "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/carousel_1.png",
+    "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/carousel_2.png",
+    "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/carousel_3.png",
+  ];
   const navigate = useNavigate();
 
   // State to track the current background image index

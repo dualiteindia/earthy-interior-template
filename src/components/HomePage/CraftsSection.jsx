@@ -1,8 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import image1 from "../../assets/HomePage/recent_work_1.png";
-import image2 from "../../assets/HomePage/recent_work_2.png";
-import image3 from "../../assets/HomePage/recent_work_3.png";
-import image4 from "../../assets/HomePage/recent_work_4.png";
+
 const CraftsSection = () => {
   const navigate = useNavigate();
   return (
@@ -39,7 +36,9 @@ const CraftsSection = () => {
             {/* Left column - Single image */}
             <div className=" h-[50%]  w-full flex flex-row justify-center gap-[36px] max-xmd:gap-[33px] ">
               <div
-                style={{ backgroundImage: `url(${image2})` }}
+                style={{
+                  backgroundImage: `url("https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/recent_work_1.png")`,
+                }}
                 className="w-[66%] relative h-full cursor-pointer bg-cover bg-center  h-[100%] flex justify-center items-center group"
                 aria-label="Craft 2"
                 onClick={() => {
@@ -61,7 +60,9 @@ const CraftsSection = () => {
                 </div>
               </div>
               <div
-                style={{ backgroundImage: `url(${image1})` }}
+                style={{
+                  backgroundImage: `url("https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/recent_work_1.png")`,
+                }}
                 className="relative w-[33%] h-full  bg-cover bg-center cursor-pointer h-[100%] flex justify-center items-center group"
                 aria-label="Craft 1"
                 onClick={() => {
@@ -87,7 +88,9 @@ const CraftsSection = () => {
             {/* Right column - Two images stacked */}
             <div className="w-full flex flex-row justify-center gap-[36px]   max-xmd:gap-[33px] h-[50%] ">
               <div
-                style={{ backgroundImage: `url(${image4})` }}
+                style={{
+                  backgroundImage: `url("https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/recent_work_4.png")`,
+                }}
                 className="relative w-[33%] h-full  bg-cover bg-center cursor-pointer  h-[100%] flex justify-center items-center group"
                 aria-label="Craft 4"
                 onClick={() => {
@@ -110,7 +113,9 @@ const CraftsSection = () => {
               </div>
 
               <div
-                style={{ backgroundImage: `url(${image3})` }}
+                style={{
+                  backgroundImage: `url("https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/recent_work_3.png")`,
+                }}
                 className="relative w-[66%] h-full bg-cover cursor-pointer bg-center flex justify-center items-center group"
                 aria-label="Craft 3"
                 onClick={() => {

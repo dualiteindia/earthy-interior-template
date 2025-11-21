@@ -1,8 +1,5 @@
-import React from "react";
-import image1 from "../../assets/HomePage/color-palete.png";
-import image2 from "../../assets/HomePage/pikaso.png";
-import image3 from "../../assets/HomePage/texture.png";
 import { useNavigate } from "react-router-dom";
+
 const Texture = () => {
   const navigate = useNavigate();
   return (
@@ -28,7 +25,13 @@ const Texture = () => {
           <h2 className="text-[40px] font-raleway font-bold text-[#000000] flex leading-[120%] h-[75px] items-center justify-center">
             TEXTURE
           </h2>
-          <img src={image3} alt="Texture Samples" className="w-100% h-[309px]" />
+          <img
+            src={
+              "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/texture.png"
+            }
+            alt="Texture Samples"
+            className="w-100% h-[309px]"
+          />
         </div>
 
         {/* Color Card */}
@@ -37,7 +40,13 @@ const Texture = () => {
           <h2 className="text-[40px] font-raleway font-bold text-[#000000] leading-[120%] h-[75px] flex items-center justify-center">
             COLOR
           </h2>
-          <img src={image1} alt="Color Palette" className="w-100% h-[302px]" />
+          <img
+            src={
+              "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/color-palete.png"
+            }
+            alt="Color Palette"
+            className="w-100% h-[302px]"
+          />
         </div>
 
         {/* Aesthetic Card */}
@@ -46,7 +55,13 @@ const Texture = () => {
           <h2 className="text-[40px] font-raleway font-bold text-[#000000] leading-[120%] h-[75px] flex items-center justify-center">
             AESTHETIC
           </h2>
-          <img src={image2} alt="Aesthetic Design" className="w-100% h-[296px]" />
+          <img
+            src={
+              "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/pikaso.png"
+            }
+            alt="Aesthetic Design"
+            className="w-100% h-[296px]"
+          />
         </div>
       </div>
 

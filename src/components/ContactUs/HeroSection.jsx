@@ -1,12 +1,11 @@
 import React from "react";
-import image from "../../assets/Contact/herobanner.png";
 
 const HeroSection = () => {
   return (
     <div
       className="w-full h-[316px] flex justify-center items-center max-md:h-[235px] max-sm:h-[205px]"
       style={{
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url("https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/contact/herobanner.png")`,
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}

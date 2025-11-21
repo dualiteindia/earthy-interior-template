@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import image from "../../assets/HomePage/contact_image.png";
-import emailjs from "emailjs-com";
+import { useState } from "react";
+
 const ContactUs = () => {
   const [showMsg, setShowMsg] = useState(false);
   const [formData, setFormData] = useState({
@@ -111,7 +110,13 @@ const ContactUs = () => {
 
         {/* Right Side - Image Section */}
         <div className=" max-w-[538px] h-[666px] flex justify-center max-md:w-[309px] max-md:h-[532px] max-ymd:hidden">
-          <img src={image} alt="Decorative Image" className=" object-cover  shadow-lg" />
+          <img
+            src={
+              "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/contact_image.png"
+            }
+            alt="Decorative Image"
+            className=" object-cover  shadow-lg"
+          />
         </div>
       </div>
     </section>

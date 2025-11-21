@@ -1,12 +1,9 @@
-import React from "react";
-import banner from "../../assets/AboutUs/subscription.png";
-
 const Subscribe = () => {
   return (
     <div
       className="w-[100%] h-[400px] max-md:h-[338px] max-sm:h-[426px] px-[100px] max-md:px-[36px]  justify-center flex items-center "
       style={{
-        backgroundImage: `url(${banner})`,
+        backgroundImage: `url("https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/aboutus/subscription.png")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

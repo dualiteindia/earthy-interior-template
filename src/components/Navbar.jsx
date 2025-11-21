@@ -1,5 +1,4 @@
 import { useState } from "react";
-import image from "../assets/HomePage/brand_logo.png";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -15,7 +14,13 @@ const Navbar = () => {
       <nav className="bg-[#002D24] flex justify-center items-center h-[90px] w-[100%]">
         {/* Logo */}
         <div className="flex justify-between cursor-pointer items-center w-[90%] max-xmd:w-[95%]">
-          <img src={image} className="h-[85px]" onClick={() => navigate("/")} />
+          <img
+            src={
+              "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/homepage/brand_logo.png"
+            }
+            className="h-[85px]"
+            onClick={() => navigate("/")}
+          />
 
           {/* Hamburger Icon */}
           <div className="flex flex-col space-y-1 cursor-pointer hidden max-zmd:flex" onClick={toggleMenu}>

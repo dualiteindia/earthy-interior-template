@@ -1,8 +1,3 @@
-import benefits1 from "../../assets/AboutUs/benefits1.png";
-import benefits2 from "../../assets/AboutUs/benefits2.png";
-import benefits3 from "../../assets/AboutUs/benefits3.png";
-import benefits4 from "../../assets/AboutUs/benefits4.png";
-
 const Benefits = () => {
   return (
     <div className="w-[100%] flex flex-col items-center">
@@ -21,7 +16,12 @@ const Benefits = () => {
           <div className="flex gap-[20px]  w-[66%] max-md:w-[100%] max-sm:flex-col">
             <div className="w-[50%] shadow-lg max-sm:w-[100%] max-sm:h-[50%] bg-[#FFFFFF] px-[24px] flex flex-col justify-center py-[46px]">
               <div className=" flex gap-[20px] max-md:gap-[28px] flex-col h-full max-sm:items-center ">
-                <img src={benefits1} className="w-[76px] h-[80px]" />
+                <img
+                  src={
+                    "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/aboutus/benefits1.png"
+                  }
+                  className="w-[76px] h-[80px]"
+                />
                 <div className="font-raleway text-[32px] font-bold text-[#285A43] leading-[140%] ">Quality Product</div>
                 <div className="font-raleway text-[20px] font-light text-[#8490A1] leading-[150%] max-sm:leading-[24px] max-sm:text-center ">
                   Our lime plasters breathe naturally, regulating moisture and creating healthier, more comfortable
@@ -31,7 +31,12 @@ const Benefits = () => {
             </div>
             <div className="w-[50%] shadow-lg max-md:w-[50%] max-sm:w-[100%] max-sm:h-[50%] h-[100%] bg-[#FFFFFF] px-[24px] flex flex-col justify-center py-[46px]">
               <div className="flex gap-[20px] max-zmd:gap-[10px] flex-col h-full max-sm:items-center">
-                <img src={benefits2} className="w-[119px] h-[83px]" />
+                <img
+                  src={
+                    "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/aboutus/benefits2.png"
+                  }
+                  className="w-[119px] h-[83px]"
+                />
                 <div className="font-raleway text-[32px] max-sm:text-center font-bold text-[#285A43] leading-[140%]">
                   Breathable & Absorbs CO2
                 </div>
@@ -46,7 +51,12 @@ const Benefits = () => {
             {/* <div className=" flex h-[50%] max-sm:block"> */}
             <div className="w-[100%] shadow-lg max-md:w-[50%] max-sm:w-[100%] max-sm:h-[50%] h-[100%] bg-[#FFFFFF] px-[24px] flex flex-col justify-center py-[46px]">
               <div className="flex gap-[20px] max-md:gap-[10px] flex-col h-full max-sm:items-center">
-                <img src={benefits3} className="w-[86px] h-[76px] max-md:w-[70px] max-md:h-[61px]" />
+                <img
+                  src={
+                    "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/aboutus/benefits3.png"
+                  }
+                  className="w-[86px] h-[76px] max-md:w-[70px] max-md:h-[61px]"
+                />
                 <div className="font-raleway text-[32px] font-bold text-[#285A43] leading-[140%]">Biodegradable</div>
                 <div className="font-raleway text-[20px] font-light text-[#8490A1] max-sm:text-center leading-[120%] max-sm:leading-[24px] ">
                   Made from natural limestone and earth-based materials, our finishes return to the soil without leaving
@@ -56,7 +66,12 @@ const Benefits = () => {
             </div>
             <div className="w-[50%] hidden max-md:flex shadow-lg max-sm:w-[100%] max-sm:h-[50%] h-[100%] bg-[#FFFFFF] px-[24px] flex-col justify-center py-[46px]">
               <div className="flex gap-[20px] max-md:gap-[10px] max-sm:items-center flex-col h-full">
-                <img src={benefits4} className="w-[86px] h-[76px] max-md:w-[70px] max-md:h-[61px]" />
+                <img
+                  src={
+                    "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/aboutus/benefits4.png"
+                  }
+                  className="w-[86px] h-[76px] max-md:w-[70px] max-md:h-[61px]"
+                />
                 <div className="font-raleway text-[32px] max-sm:text-center font-bold text-[#285A43] leading-[140%]">
                   Zero Carbon Product
                 </div>
@@ -71,7 +86,12 @@ const Benefits = () => {
 
         <div className="w-full max-md:hidden shadow-lg max-sm:w-[100%] max-sm:h-[50%] h-[289px] pl-[50px] bg-[#FFFFFF] flex flex-col justify-center">
           <div className="flex gap-[20px] max-md:gap-[10px] flex-col   ">
-            <img src={benefits4} className="w-[70px] h-[75px]" />
+            <img
+              src={
+                "https://69sfgmk1pv2omedb.public.blob.vercel-storage.com/claymist-earthy-interior-template/aboutus/benefits4.png"
+              }
+              className="w-[70px] h-[75px]"
+            />
             <div className="font-raleway text-[32px] max-sm:text-[16px] font-bold text-[#285A43] leading-[140%]">
               Zero Carbon Product
             </div>

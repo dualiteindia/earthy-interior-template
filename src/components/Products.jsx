@@ -1,9 +1,9 @@
 import React from "react";
 import HeroSections from "./Products/HeroSection";
-import Designs from "./Products/Designs";
 import Experience from "./Products/Experience";
-import Gallery from "./Products/Gallery";
-import Caption from "./Products/Caption";
+// import Gallery from "./Products/Gallery";
+// import Caption from "./Products/Caption";
+// import Designs from "./Products/Designs";
 import Stats from "./Products/Stats";
 
 const Products = () => {
@@ -11,10 +11,10 @@ const Products = () => {
     <div>
       <HeroSections />
       <Stats />
-      <Designs />
+      {/* <Designs /> */}
       <Experience />
-      <Caption />
-      <Gallery />
+      {/* <Caption /> */}
+      {/* <Gallery /> */}
     </div>
   );
 };

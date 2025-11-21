@@ -1,17 +1,9 @@
-import React from "react";
-import instagram from "../../assets/Product/instagram.png";
-import image1 from "../../assets/Product/image11.png";
-import image2 from "../../assets/Product/image22.png";
-import image3 from "../../assets/Product/image33.png";
-import image4 from "../../assets/Product/image44.png";
 const Gallery = () => {
   return (
     <div className="bg-[#F8F8F8] flex justify-center items-center w-full h-[739px]  max-sm:h-screen">
       <div className="w-[90.9%] h-[467px] max-md:h-[573px]  max-sm:w-full max-sm:h-full flex flex-col justify-between max-sm:justify-center max-sm:gap-[20px]">
         <div className="flex w-full justify-between items-center max-sm:flex-col max-sm:gap-[15px]">
-          <div className="font-italiana text-[32px] text-[#000000]">
-            Cementolime
-          </div>
+          <div className="font-italiana text-[32px] text-[#000000]">Cementolime</div>
           <div className="font-raleway cursor-pointer text-[16px] text-[#665244] flex gap-[8px]">
             <img src={instagram} className="w-[25px] h-[24px]" />
             <div>FOLLOW US ON INSTAGRAM</div>
@@ -27,9 +19,7 @@ const Gallery = () => {
                 backgroundPosition: "center",
                 // backgroundRepeat: "no-repeat",
               }}
-              onClick={() =>
-                window.open("https://www.instagram.com/cemento.lime/", "_blank")
-              }
+              onClick={() => window.open("https://www.instagram.com/cemento.lime/", "_blank")}
             >
               <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -45,9 +35,7 @@ const Gallery = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-              onClick={() =>
-                window.open("https://www.instagram.com/cemento.lime/", "_blank")
-              }
+              onClick={() => window.open("https://www.instagram.com/cemento.lime/", "_blank")}
             >
               <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -65,9 +53,7 @@ const Gallery = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-              onClick={() =>
-                window.open("https://www.instagram.com/cemento.lime/", "_blank")
-              }
+              onClick={() => window.open("https://www.instagram.com/cemento.lime/", "_blank")}
             >
               {/* Overlay */}
               <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -84,9 +70,7 @@ const Gallery = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-              onClick={() =>
-                window.open("https://www.instagram.com/cemento.lime/", "_blank")
-              }
+              onClick={() => window.open("https://www.instagram.com/cemento.lime/", "_blank")}
             >
               <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 

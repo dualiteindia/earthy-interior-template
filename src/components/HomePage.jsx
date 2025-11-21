@@ -1,8 +1,7 @@
-import { useState } from "react";
 import HeroSection from "./HomePage/HeroSection";
 import NewArrivalsSection from "./HomePage/NewArrivalsSection";
-import TestimonialSection from "./HomePage/TestimonialSection";
-import FAQSection from "./HomePage/FAQSection";
+// import TestimonialSection from "./HomePage/TestimonialSection";
+// import FAQSection from "./HomePage/FAQSection";
 import CraftsSection from "./HomePage/CraftsSection";
 import Texture from "./HomePage/Texture";
 import ContactUs from "./HomePage/Contact";
